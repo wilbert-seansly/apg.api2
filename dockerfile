@@ -7,7 +7,7 @@ RUN apk add vips
 
 # Copy source files
 RUN mkdir /srv/strapi
-COPY ./env /srv/strapi/.env
+COPY ./.env /srv/strapi/.env
 
 WORKDIR /srv/strapi
 COPY ./src ./src
