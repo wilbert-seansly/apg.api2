@@ -26,15 +26,6 @@ jobs:
           username: ${{ secrets.AzureAppService_ContainerUsername_702d6451d2b64a5e8caf7c335f031931 }}
           password: ${{ secrets.AzureAppService_ContainerPassword_15607a9830e24b1dae5bc5cce9a0954d }}
 
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_DEBUG: false
-          envkey_SOME_API_KEY: "123456abcdef"
-          some_other_variable: foobar
-          file_name: .env
-          fail_on_empty: false
-
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
         env:
@@ -52,6 +43,8 @@ jobs:
           push: true
           tags: apgapi2.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_702d6451d2b64a5e8caf7c335f031931 }}/apgapi2:${{ github.sha }}
           file: ./Dockerfile
+          build-args:
+            STORAGE_URL: ${{ secrets.STORAGE_URL }}
 
   deploy:
     runs-on: ubuntu-latest
