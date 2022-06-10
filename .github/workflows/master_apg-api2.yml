@@ -44,7 +44,7 @@ jobs:
           tags: apgapi2.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_702d6451d2b64a5e8caf7c335f031931 }}/apgapi2:${{ github.sha }}
           file: ./Dockerfile
           build-args:
-            STORAGE_URL: ${{ secrets.STORAGE_URL }}
+            ABC: "123"
 
   deploy:
     runs-on: ubuntu-latest
