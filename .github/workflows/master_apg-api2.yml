@@ -42,7 +42,7 @@ jobs:
             DATABASE_PASSWORD=${{secrets.DATABASE_PASSWORD}} 
             DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} 
             DATABASE_NAME=${{secrets.DATABASE_NAME}}
-          platforms: arm64
+          platforms: linux/arm64
 
   deploy:
     runs-on: ubuntu-latest
