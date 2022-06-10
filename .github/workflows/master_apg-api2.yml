@@ -25,6 +25,11 @@ jobs:
           registry: https://apgapi2.azurecr.io/
           username: ${{ secrets.AzureAppService_ContainerUsername_702d6451d2b64a5e8caf7c335f031931 }}
           password: ${{ secrets.AzureAppService_ContainerPassword_15607a9830e24b1dae5bc5cce9a0954d }}
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v1.3.0
+          with:
+            envkey_TEST: "abc"
+
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
