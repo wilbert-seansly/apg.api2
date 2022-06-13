@@ -1,6 +1,7 @@
 ############################
 # OS X
 ############################
+dockerbuildcommand
 
 .DS_Store
 .AppleDouble
