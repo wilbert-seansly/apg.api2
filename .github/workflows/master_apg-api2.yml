@@ -37,11 +37,12 @@ jobs:
             STORAGE_URL=${{ secrets.STORAGE_URL }} 
             STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY}} 
             APP_KEYS=${{ secrets.APP_KEYS}} 
-            STORAGE_CONTAINER_NAME=${{secrets.STORAGE_CONTAINER_NAME}} 
             DATABASE_HOST=${{secrets.DATABASE_HOST}} 
             DATABASE_PASSWORD=${{secrets.DATABASE_PASSWORD}} 
             DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} 
-            DATABASE_NAME=${{secrets.DATABASE_NAME}}
+            JWT_SECRET=${{secrets.JWT_SECRET}}
+            ADMIN_JWT_SECRET=${{secrets.ADMIN_JWT_SECRET}}
+            API_TOKEN_SALT=${{secrets.API_TOKEN_SALT}}
 
   deploy:
     runs-on: ubuntu-latest
